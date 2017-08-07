@@ -34,6 +34,67 @@ var years = matrix.map(function(list){
     return list[0]
 })
 
+var cvData = {
+    'experience':[
+        {
+            'year':1994,
+            'title':'Designer/Artist',
+            'company':'Freelance'
+        },
+        {
+            'year':2001,
+            'title':'Principal',
+            'company':'Hamilton Thomas Design, LLC'
+        },
+        {
+            'year':2004,
+            'title':'Creative Director',
+            'company':'Princeton Internet Group'
+        },
+        {
+            'year':2009,
+            'title':'Web Developer',
+            'company':'Freelance'
+        },
+        {
+            'year':2012,
+            'title':'Front-end Web Developer',
+            'company':'Advance Digital'
+        },
+        {
+            'year':2013,
+            'title':'Software Engineer',
+            'company':'SnapOne, INC'
+        },
+        {
+            'year':2015,
+            'title':'Chief Innovation & Data Officer',
+            'company':'iQ4'
+        },
+        {
+            'year':2017,
+            'title':'Lecturer',
+            'company':'UC Berkeley'
+        }
+    ],
+    'education':[
+        {
+            'year':1994,
+            'college':'The Cooper Union',
+            'degree':'Bachelor of Fine Art'
+        },
+        {
+            'year':2014,
+            'college':'MCCC',
+            'degree':'Computer Science Certificate'
+        },
+        {
+            'year':2017,
+            'college':'University of California, Berkeley',
+            'degree':'Master of Information and Data Science'
+        }
+    ]
+}
 
 //console.log("REMAP---------------------------");
 var remapped =[1,1,1,1,1].map(function(dat,i){
@@ -149,6 +210,24 @@ var v_line = linegroup.selectAll('line')
     .attr("stroke-width", 2)
     .attr("stroke", "#cccccc");    
 
+var linegroup2 = svg.append('g')
+    .attr('class','linegroup2')
+var edu_line = linegroup2.selectAll('line')
+    .data(cvData.education)
+    .enter().append('line')
+    .attr({
+        'x1':function(d){
+            return xScale(d.year)
+        },
+        'x2':function(d){
+            return xScale(d.year)
+        },
+        "y1": function(d) { return 30; },
+        "y2": function(d,i) { return i%2==0 ? 80 : 140; },
+        "stroke-dasharray": ("4, 4"),
+        'stroke':'#cccccc',
+        'stroke-width':4
+    })
 
 var small_circle = linegroup.selectAll('circle')
     .data(years)
@@ -165,35 +244,61 @@ var small_circle = linegroup.selectAll('circle')
     .style("fill", "#cccccc");
 
 ////////////////////////////////////////////////////////////
-// text
+// Experience text
+////////////////////////////////////////////////////////////
 var textgroup = svg.append('g')
     .attr('class','textgroup')
 
 var fo = svg.selectAll('textgroup')
-    .data(years)
+    .data(cvData.experience)
     .enter().append('foreignObject')
     .attr({
         'x': function(d,i) { 
-            if(years[i+1]){
-                return ((xScale(d) + xScale(years[i+1]))/2)-100
+            if(cvData.experience[i+1]){
+                return ((xScale(d.year) + xScale(cvData.experience[i+1].year))/2)-150
             }else{
-                return ((xScale(d) + xScale(endDate))/2)-100
+                return ((xScale(d.year) + xScale(endDate))/2)-150
             }
         },
         'y': function(d,i) { return - (Math.pow(i,3)+200); },
-        'width': 200,
+        'width': 300,
         'height':50,
         'class': 'svg-tooltip'
     });
 
-var div = fo.append('xhtml:div')
+var exp_div = fo.append('xhtml:div')
     .attr('class','annotaion')
-    div.append('p')
+    exp_div.append('p').append('span')
     .attr('class', 'job-title')
-    .html('Principal')
-    div.append('p')
+    .html(function(d){return d.title})
+    exp_div.append('p').append('span')
     .attr('class', 'company-name')
-    .html('C&amp;P Generation');
+    .html(function(d){return d.company});
+
+////////////////////////////////////////////////////////////
+// Education text
+////////////////////////////////////////////////////////////
+var educationgroup = svg.append('g')
+    .attr('class','educationgroup')
+var edu_fo = svg.selectAll('educationgroup')
+    .data(cvData.education)
+    .enter().append('foreignObject')
+    .attr({
+        'x': function(d,i) { return xScale(d.year)-200},
+        'y': function(d,i) { return i%2==0 ? 80 : 140; },
+        'width': 400,
+        'height':50,
+    })
+
+var edu_div = edu_fo.append('xhtml:div')
+    .attr('class','annotaion')
+    edu_div.append('p').append('span')
+    .attr('class', 'job-title')
+    .html(function(d){return d.degree})
+    edu_div.append('p').append('span')
+    .attr('class', 'company-name')
+    .html(function(d){return d.college});
+
 
 ////////////////////////////////////////////////////////////
 // Make rectangles

@@ -18,6 +18,16 @@ svg{
 .annotaion p{
     margin:0;
     text-align: center;
+    
+}
+.annotaion p span{
+    background: #fff;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.annotaion p:nth-of-type(1) span{
+    padding-top: 5px;
 }
 .company-name{
     font-size: 16px;
