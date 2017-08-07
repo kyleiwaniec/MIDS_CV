@@ -1,0 +1,29 @@
+#viz{
+    width:1240px;
+    margin:0 auto;
+}
+svg{
+    /* border: 1px solid #333;  */ 
+    font: 10px sans-serif;
+    shape-rendering: crispEdges;
+}
+.chart{
+    overflow: visible;
+}
+.dategroup{
+    font-family: 'Helvetica Neue', 'Roboto', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+}
+.annotaion p{
+    margin:0;
+    text-align: center;
+}
+.company-name{
+    font-size: 16px;
+    font-weight: 100;
+}
+.job-title{
+    font-size: 16px;
+    font-weight: bold;
+}
