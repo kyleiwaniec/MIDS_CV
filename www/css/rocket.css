@@ -1,6 +1,22 @@
-#viz{
-    width:1240px;
+html,body{
+    font-family: 'Helvetica Neue', 'Roboto', sans-serif;
+}
+h1{
+    font-weight: 100;
+    font-size: 60px;
+    color:#666;
+}
+h2{
+    
+}
+.container{
+    max-width: 1240px;
     margin:0 auto;
+    position:relative;
+}
+#viz{
+    position: absolute;
+    top:0;
 }
 svg{
     /* border: 1px solid #333;  */ 
