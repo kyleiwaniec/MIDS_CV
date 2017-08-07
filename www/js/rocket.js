@@ -1,5 +1,6 @@
 var w = 1240,
-    h = 500
+    h = 600,
+    bottomOffset = 10;
 
 // create canvas
 var svg = d3.select("#viz").append("svg:svg")
@@ -94,7 +95,7 @@ svg.append("svg:g")
 
 
 x = d3.scale.ordinal().rangeRoundBands([0, w]);
-y = d3.scale.linear().range([0, h/5]);
+y = d3.scale.linear().range([0, 100]);
 z = d3.scale.ordinal().range(["#cccccc", "#421789", "#07904e", "#0188ba", "#ddfd02"]);
 
 x.domain(stacked[0].map(function(d) { return d.x; }));
@@ -143,7 +144,7 @@ var v_line = linegroup.selectAll('line')
             return (xScale(d) + xScale(endDate))/2
         }
     })
-    .attr("y1", function(d) { return - 20; })
+    .attr("y1", function(d) { return - bottomOffset; })
     .attr("y2", function(d,i) { return - (Math.pow(i,3)+150); })
     .attr("stroke-width", 2)
     .attr("stroke", "#cccccc");    
@@ -181,7 +182,7 @@ var fo = svg.selectAll('textgroup')
         },
         'y': function(d,i) { return - (Math.pow(i,3)+200); },
         'width': 200,
-        'height':200,
+        'height':50,
         'class': 'svg-tooltip'
     });
 
@@ -211,7 +212,7 @@ var rect = valgroup.selectAll("rect")
     .data(function(d){return d;})
     .enter().append("svg:rect")
     .attr("x", function(d) { return d.offset/m * (w)})
-    .attr("y", function(d) { return (-y(d.y0) - y(d.y)) - 20; }) // -20 raises the whole chart
+    .attr("y", function(d) { return (-y(d.y0) - y(d.y)) - bottomOffset; }) // -20 raises the whole chart
     .attr("height", function(d) { return y(d.y); })
     .attr("width", function(d) {
         return d.w/m * (w) - 1; // -1 makes space between sections
@@ -226,18 +227,18 @@ var rect = valgroup.selectAll("rect")
 var triangle1 = svg.append('path')
     .attr('fill','#421789')
     .attr('d', function(d,i) { 
-        return 'M'+ 0 +' '+ -20 + 'l' + xScale(2001)/2 +' '+ -50 + 'l' + ((xScale(2001)/2)-1)  +' '+ 0 + 'l' + 0 +' '+ 50 +'z'; 
+        return 'M'+ 0 +' '+ -bottomOffset + 'l' + xScale(2001)/2 +' '+ -50 + 'l' + ((xScale(2001)/2)-1)  +' '+ 0 + 'l' + 0 +' '+ 50 +'z'; 
   });
 var triangle2 = svg.append('path')
     .attr('fill','#07904e')
     .attr('d', function(d,i) { 
-        return 'M'+ xScale(2001)/2 +' '+ -70 + 'l' + ((xScale(2001)/2)-1)  +' '+ -50 + 'l' + 0 +' '+ 50 +'z'; 
+        return 'M'+ xScale(2001)/2 +' '+ -(bottomOffset+50) + 'l' + ((xScale(2001)/2)-1)  +' '+ -50 + 'l' + 0 +' '+ 50 +'z'; 
   });
 var triangle2 = svg.append('path')
     .attr('fill','#000000')
     .attr('opacity',0.2)
     .attr('d', function(d,i) { 
-        return 'M'+ xScale(2010) +' '+ -20 + 'l' + (xScale(2018)-xScale(2010))  +' '+ -100 + 'l' + 0 +' '+ 100 +'z'; 
+        return 'M'+ xScale(2010) +' '+ -bottomOffset + 'l' + (xScale(2018)-xScale(2010))  +' '+ -100 + 'l' + 0 +' '+ 100 +'z'; 
   });    
 
 ////////////////////////////////////////////////////////////
