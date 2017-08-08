@@ -74,7 +74,7 @@ var cvData = {
         {
             'year':2017,
             'title':'Lecturer - Machine Learning @Scale',
-            'company':'UC Berkeley'
+            'company':'University of California, Berkeley'
         }
     ],
     'education':[
