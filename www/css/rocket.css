@@ -9,6 +9,26 @@ h1{
 h2{
 
 }
+
+/* COLORS */
+.clr-data:before{
+    background-color: #ddfd02;
+}
+.clr-code:before{
+    background-color: #0188ba;
+}
+.clr-business:before{
+    background-color: #ccc;
+}
+.clr-design:before{
+    background-color: #07904e;
+}
+.clr-art:before{
+    background-color: #421789;
+}
+
+/*//////////*/
+
 .container{
     max-width: 1240px;
     margin:0 auto;
@@ -21,6 +41,7 @@ h2{
 }
     .nameplate .name{
         margin-bottom: 0;
+        margin-top:0;
     }
     .nameplate .email{
         margin-top: -5px;
@@ -35,12 +56,34 @@ h2{
         margin-left: 6px;
         font-weight: 600;
         font-size: 20px;
-        color: #999;
+        color: #666;
     }
     .nameplate .plus{
         font-weight: 100;
         font-size: 24px;
     }
+
+ul.legend{
+    list-style: none;
+    margin: 45px 5px;
+    padding:0;
+}    
+
+.legend li{
+    font-size: 18px;
+    font-weight: 300;
+    color:#666;
+}
+.legend li:before{
+    content: "";
+    display: inline-block;
+    width:25px;
+    height:15px;
+    border-top-right-radius: 7.5px;
+    border-bottom-right-radius: 7.5px;
+    margin-right:10px;
+}
+
 #viz{
 
 }
@@ -53,7 +96,7 @@ svg{
     overflow: visible;
 }
 .dategroup{
-    font-family: 'Helvetica Neue', 'roboto', sans-serif;
+    font-family: 'roboto', sans-serif;
     font-weight: 100;
     font-size: 24px;
 }

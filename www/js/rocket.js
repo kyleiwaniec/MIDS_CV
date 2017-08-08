@@ -153,7 +153,11 @@ svg.append("svg:g")
     .call(xAxis)
 
 ////////////////////////////////////////////////////////////
-
+var clr_data    ="#ddfd02";
+var clr_code    ="#0188ba";
+var clr_business="#cccccc";
+var clr_design  ="#07904e";
+var clr_art     ="#421789";
 
 x = d3.scale.ordinal().rangeRoundBands([0, w]);
 y = d3.scale.linear().range([0, 100]);
