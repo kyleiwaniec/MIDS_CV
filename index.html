@@ -37,16 +37,23 @@
     <meta name="description" content="A graphical CV project designed and developed in collaboration with UC Berkeley MIDS graduate students">
     <meta name="author" content="UC Berkeley MIDS graduate students">
     <title>MIDS CV</title>
-    <link rel="stylesheet" href="/www/css/styles.css">
+    <link rel="stylesheet" href="/www/css/rocket.css">
 
-    <link href='//fonts.googleapis.com/css?family=Roboto:200,300,500,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Roboto:100,200,300,500,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
    </head>
  <body>
-   "Hello MIDS Kids"
-   <script src="//d3js.org/d3.v3.min.js"></script>
-   <script src="/www/js/scripts.js"></script>
-   
+   <div class="container">
+        <div class="nameplate">
+            <h1 class="name">Kyle Hamilton</h1>
+            <p class="email">kylehamilton@berkeley.edu</p>
+            <p class="byline">ART <span class="plus">+</span> ENGINEERING <span class="plus">+</span> DATA SCIENCE</p>
+        </div>
+        
+
+        <div id="viz"></div>
+    </div>
+    <script src="//d3js.org/d3.v2.js"></script>
+    <script src='/www/js/rocket.js'></script>
  </body>
 </html>

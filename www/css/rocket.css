@@ -1,5 +1,5 @@
 html,body{
-    font-family: 'Helvetica Neue', 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 h1{
     font-weight: 100;
@@ -7,16 +7,42 @@ h1{
     color:#666;
 }
 h2{
-    
+
 }
 .container{
     max-width: 1240px;
     margin:0 auto;
     position:relative;
 }
-#viz{
+.nameplate{
     position: absolute;
     top:0;
+    left: -26px;
+}
+    .nameplate .name{
+        margin-bottom: 0;
+    }
+    .nameplate .email{
+        margin-top: -5px;
+        margin-left: 3PX;
+        font-size: 30.2px;
+        margin-bottom: 0;
+        font-weight: 100;
+        color: #999;
+    }
+    .nameplate .byline{
+        margin-top: -5px;
+        margin-left: 6px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #999;
+    }
+    .nameplate .plus{
+        font-weight: 100;
+        font-size: 24px;
+    }
+#viz{
+
 }
 svg{
     /* border: 1px solid #333;  */ 

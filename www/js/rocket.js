@@ -1,5 +1,5 @@
 var w = 1240,
-    h = 600,
+    h = 800,
     bottomOffset = 10;
 
 // create canvas
@@ -73,7 +73,7 @@ var cvData = {
         },
         {
             'year':2017,
-            'title':'Lecturer',
+            'title':'Lecturer - Machine Learning @Scale',
             'company':'UC Berkeley'
         }
     ],
