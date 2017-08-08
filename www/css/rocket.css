@@ -90,7 +90,7 @@ ul.legend{
 svg{
     /* border: 1px solid #333;  */ 
     font: 10px sans-serif;
-    shape-rendering: crispEdges;
+    /*shape-rendering: crispEdges;*/
 }
 .chart{
     overflow: visible;
