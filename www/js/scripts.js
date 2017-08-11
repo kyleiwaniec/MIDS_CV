@@ -98,3 +98,9 @@ _log('disabled, should not appear');
 console.log('--- regular log2 ---');
 
 */
+
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+

@@ -1,4 +1,4 @@
-var w = 1240,
+var w = 1140,
     h = 800,
     bottomOffset = 10;
 
@@ -134,12 +134,10 @@ console.log("stacked",stacked)
 // Make Dates Axis 
 ////////////////////////////////////////////////////////////
 
-//var dates = [1994,1996,1998,2000,2002,2004,2006,2008,2010,2012,2014,2016]; 
 var xScale = d3.scale.linear()
     .domain([startDate, endDate])
-    .range([0,w]); // domain takes bounds as arguments, not all numbers
-    //xScale.domain() // [-2.347, 7.431];
-    //xScale.nice() // [-3, 8]
+    .range([0,w]); 
+
 
 var xAxis = d3.svg.axis()
     .orient("bottom") // default
@@ -158,10 +156,18 @@ var clr_code    ="#0188ba";
 var clr_business="#cccccc";
 var clr_design  ="#07904e";
 var clr_art     ="#421789";
+var pallete = "#cccccc,#421789,#07904e,#0188ba,#ddfd02".split(",")
+var pallete = "#E8DDCB,#CDB380,#036564,#033649,#031634".split(",") // **
+//var pallete = "#FFFFFF,#CBE86B,#F2E9E1,#1C140D,#CBE86B,#FFFFFF,#CBE86B,#F2E9E1".split(",") // green and black *
+//var pallete ="#EFFFCD,#DCE9BE,#555152,#2E2633,#99173C,#EFFFCD,#DCE9BE,#555152".split(",")
+//var pallete ="#FFED90,#A8D46F,#359668,#3C3251,#341139".split(",") //*
+//var pallete ="#FC354C,#29221F,#13747D,#0ABFBC,#FCF7C5,#FC354C,#29221F,#13747D".split(",") // *
+//var pallete ="#230F2B,#F21D41,#EBEBBC,#BCE3C5,#82B3AE,#230F2B,#F21D41,#EBEBBC".split(",")
+console.log(pallete)
 
 x = d3.scale.ordinal().rangeRoundBands([0, w]);
 y = d3.scale.linear().range([0, 100]);
-z = d3.scale.ordinal().range(["#cccccc", "#421789", "#07904e", "#0188ba", "#ddfd02"]);
+z = d3.scale.ordinal().range(pallete);
 
 x.domain(stacked[0].map(function(d) { return d.x; }));
 y.domain([0, d3.max(stacked[stacked.length - 1], function(d) { return d.y0 + d.y; })]);
@@ -334,12 +340,12 @@ var rect = valgroup.selectAll("rect")
 // Make triangles
 ////////////////////////////////////////////////////////////
 var triangle1 = svg.append('path')
-    .attr('fill','#421789')
+    .attr('fill',pallete[1])
     .attr('d', function(d,i) { 
         return 'M'+ 0 +' '+ -bottomOffset + 'l' + xScale(2001)/2 +' '+ -50 + 'l' + ((xScale(2001)/2)-1)  +' '+ 0 + 'l' + 0 +' '+ 50 +'z'; 
   });
 var triangle2 = svg.append('path')
-    .attr('fill','#07904e')
+    .attr('fill',pallete[2])
     .attr('d', function(d,i) { 
         return 'M'+ xScale(2001)/2 +' '+ -(bottomOffset+50) + 'l' + ((xScale(2001)/2)-1)  +' '+ -50 + 'l' + 0 +' '+ 50 +'z'; 
   });

@@ -37,20 +37,27 @@
     <meta name="description" content="A graphical CV project designed and developed in collaboration with UC Berkeley MIDS graduate students">
     <meta name="author" content="UC Berkeley MIDS graduate students">
     <title>Kyle Hamilton CV</title>
+    
+    <link rel="stylesheet" href="/MIDS_CV/www/js/libs/bootstrap-4.0.0-beta-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/MIDS_CV/www/css/rocket.css">
 
-   <!--  <link href='//fonts.googleapis.com/css?family=Roboto:100,200,300,500,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'> -->
+    <script src="/MIDS_CV/www/js/libs/jquery-3.2.1.min.js"></script>
+    <script src="/MIDS_CV/www/js/libs/popper.min.js"></script>
+
+    <script src="/MIDS_CV/www/js/libs/bootstrap-4.0.0-beta-dist/js/bootstrap.min.js"></script>
+    
     <script src="https://use.typekit.net/xni1pje.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
    </head>
  <body>
-   <div class="container">
+    <div class="container">
         <div class="nameplate">
             <h1 class="name">Kyle Hamilton</h1>
             <p class="email">kylehamilton@berkeley.edu</p>
             <p class="byline">ART <span class="plus">+</span> ENGINEERING <span class="plus">+</span> DATA SCIENCE</p>
             <ul class="legend">
-                <li class="clr-data">Data Science</li>
+                <li class="clr-data">Data Science (<a href="#recentProjects">view recent projects</a>)</li>
                 <li class="clr-code">Code</li>
                 <li class="clr-business">Business</li>
                 <li class="clr-design">Graphic Design</li>
@@ -63,7 +70,89 @@
         <!-- <div id="bubbles"></div> -->
 
     </div>
+    <div class="bottom">
+        <div class="container clearfix">
+            <div class="row">
+                <div class="col-md-9">
+                    <div id="recentProjects">
+                        <h2>Publications</h2>
+                            <ul>
+                                <li>
+                                    <a href="http://ischoolreview.com/iSR_Grav/entries/entry-2">A Comprehensive Guide to the Total Order Sort Design Pattern in MapReduce</a>
+                                </li>
+                            </ul>
+                        <h2>Recent Projects</h2>
+                        <ul>
+                            <li>
+                                <a href="http://groups.ischool.berkeley.edu/intensive_capstone_unit/">
+                                ICU Readmissions - Discriminative predictions using MIMIC III </a>
+                                 | 
+                                <a href="http://groups.ischool.berkeley.edu/intensive_capstone_unit/demo.html">Demo</a>
+                            </li>
+                            <li>
+                                <a href="http://machinelearningalgorithmsillustrated.azurewebsites.net/">Neural Networks - An illustrated introduction</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/kyleiwaniec/w266_Project/blob/master/w266%20Comment%20Quality%20Writeup.pdf">Automated Commnent Scoring with NLP</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/kyleiwaniec/w205Project/blob/master/resources_docs/Final_Project_Write_Up.pdf">Data Pipeline for spam classification and fraudulent website detection</a>
+                                 | 
+                                <a href="https://github.com/kyleiwaniec/w205Project/blob/master/resources_docs/presentation.pdf">Presentation</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr class="inverse">
+                    <div id="skills">
+                        <h2>Technical Skills</h2>
+                        <div id="bubbles"></div>
+                    </div>
+
+                    
+                </div>
+                <div class="col-md-3">
+                    <div id="gallery">
+                        <div class="row">
+                            <div class="col-md-12 ml-auto">
+                                <a href="http://ischoolreview.com/iSR_Grav/entries/entry-2" target="_blank" data-toggle="tooltip" title="A Comprehensive Guide to the Total Order Sort Design Pattern in MapReduce">
+                                    <img src="/MIDS_CV/www/img/ischool-review.png" alt="A Comprehensive Guide to the Total Order Sort Design Pattern in MapReduce"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 ml-auto">
+                                <a href="http://groups.ischool.berkeley.edu/intensive_capstone_unit" target="_blank" data-toggle="tooltip" title="ICU Readmissions - Discriminative predictions using MIMIC III">
+                                    <img src="/MIDS_CV/www/img/icu-screenshot-2.png"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 ml-auto">
+                                <a href="http://machinelearningalgorithmsillustrated.azurewebsites.net/" target="_blank" data-toggle="tooltip" title="Neural Networks - A (very*) light introduction">
+                                    <img src="/MIDS_CV/www/img/intro-to-ANN-2.png"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 ml-auto">
+                                <a href="https://github.com/kyleiwaniec/w205Project/blob/master/resources_docs/presentation.pdf" target="_blank" data-toggle="tooltip" title="Data Pipeline for spam classification and fraudulent website detection">
+                                    <img src="/MIDS_CV/www/img/data-pipeline-spam-1.png"/>
+                                    <br>
+                                    <img src="/MIDS_CV/www/img/data-pipeline-spam-2.png"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            
+        </div>
+
+    </div>
     <script src="//d3js.org/d3.v2.js"></script>
+    <script src='/MIDS_CV/www/js/scripts.js'></script>
     <script src='/MIDS_CV/www/js/rocket.js'></script>
     <script src='/MIDS_CV/www/js/bubbles.js'></script>
  </body>

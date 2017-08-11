@@ -1,25 +1,22 @@
-var width = 1240,
+var width = 600,
     height = 300,
     padding = 1.5, // separation between same-color nodes
     clusterPadding = 6, // separation between different-color nodes
-    maxRadius = 12;
+    maxRadius = 12,
+    pallete = "#E8DDCB,#CDB380,#036564,#033649,#031634".split(",") 
     color = d3.scale.ordinal()
       .domain(["Computer Science", 
               "Data Science", 
               "Art",
               "Graphic Design",
               "Business"])
-      .range(['#0188ba',
-            '#ddfd02',
-            '#421789',
-            '#07904e',
-            '#cccccc']);
+      .range(pallete);
 
 
       var tree = {
         "name": "Skills",
         "children": [{
-          "name": "Computer Science",
+          "name": "Coding",
           "children": [{
               "name": "Linux",
               "value": 3
@@ -70,7 +67,7 @@ var width = 1240,
               "value": 4
             },{
               "name": "Machine Learning",
-              "value": 2
+              "value": 6
             },{
               "name": "R",
               "value": 2
@@ -157,8 +154,8 @@ var width = 1240,
             .style("fill", function(d) { console.log("cat",d.cat);return color(d.cat); })
             .call(force.drag)
             .transition()
-              .duration(0)
-              .delay(function(d, i) { return i * 0; })
+              .duration(750)
+              .delay(function(d, i) { return i * 5; })
               .attrTween("r", function(d) {
                 var i = d3.interpolate(0, d.radius);
                 return function(t) { return d.radius = i(t); };
@@ -226,7 +223,7 @@ var width = 1240,
           });
         };
       }
-      /***************************************************************
+      //***************************************************************
       var legend_data = tree.children.filter(function(d,i){  
         return d.children;
       });
@@ -251,5 +248,5 @@ var width = 1240,
               .attr("x", function(d,i){ return 20;})
               .attr("dy", "0.40em")
               .text(function(d,i){return d.name;})
-              .attr("font-family", "'Roboto',sans-serif")    
+              .attr("class","skills-legend")  
       //***************************************************************/ 
