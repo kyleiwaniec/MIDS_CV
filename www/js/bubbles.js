@@ -151,7 +151,7 @@ var width = 600,
           .attr("class", "node")
           
           node.append("circle")
-            .style("fill", function(d) { console.log("cat",d.cat);return color(d.cat); })
+            .style("fill", function(d) { return color(d.cat); })
             .call(force.drag)
             .transition()
               .duration(750)

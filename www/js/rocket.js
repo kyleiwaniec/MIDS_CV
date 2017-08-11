@@ -116,7 +116,6 @@ var remapped =[1,1,1,1,1].map(function(dat,i){
         
     })
 });
-console.log("remapped",remapped)
 
 //console.log("LAYOUT---------------------------");
 var stacked = d3.layout.stack()(remapped)
@@ -127,7 +126,6 @@ for(var i = 0; i < stacked.length; i++){
         stacked[i][j].offset = stacked[i][j-1].w + stacked[i][j-1].offset
     }
 }
-console.log("stacked",stacked)
 
 
 ////////////////////////////////////////////////////////////
@@ -163,7 +161,6 @@ var pallete = "#E8DDCB,#CDB380,#036564,#033649,#031634".split(",") // **
 //var pallete ="#FFED90,#A8D46F,#359668,#3C3251,#341139".split(",") //*
 //var pallete ="#FC354C,#29221F,#13747D,#0ABFBC,#FCF7C5,#FC354C,#29221F,#13747D".split(",") // *
 //var pallete ="#230F2B,#F21D41,#EBEBBC,#BCE3C5,#82B3AE,#230F2B,#F21D41,#EBEBBC".split(",")
-console.log(pallete)
 
 x = d3.scale.ordinal().rangeRoundBands([0, w]);
 y = d3.scale.linear().range([0, 100]);
@@ -171,15 +168,6 @@ z = d3.scale.ordinal().range(pallete);
 
 x.domain(stacked[0].map(function(d) { return d.x; }));
 y.domain([0, d3.max(stacked[stacked.length - 1], function(d) { return d.y0 + d.y; })]);
-//y.domain([0, 0]);
-
-// show the domains of the scales              
-console.log("x.domain(): " + x.domain())
-console.log("xScale.domain(): " + xScale.domain())
-console.log("xScale.range(): " + xScale.range())
-console.log("y.domain(): " + y.domain())
-console.log("------------------------------------------------------------------");
-
 
 
 
