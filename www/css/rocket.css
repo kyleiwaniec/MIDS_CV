@@ -17,7 +17,7 @@ h2{
     padding-top: 20px;
 }
 hr.inverse{
-    border-top-color:#E8DDCB;
+    border-top-color:rgba(255,255,255,.2);
 }
 .pull-left{
     float:left;
@@ -187,6 +187,17 @@ svg{
 }
 
 
-
+.skills_category{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-weight: 300;
+}
+.skills_category li{
+    font-weight: 100;
+}
 
 

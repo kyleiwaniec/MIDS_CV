@@ -1,5 +1,5 @@
-var width = 600,
-    height = 300,
+var width = 300,
+    height = 200,
     padding = 1.5, // separation between same-color nodes
     clusterPadding = 6, // separation between different-color nodes
     maxRadius = 12,
@@ -15,7 +15,36 @@ var width = 600,
 
       var tree = {
         "name": "Skills",
-        "children": [{
+        "children": [
+        {
+            "name": "Data Science",
+            "children": [{
+              "name": "Statistics",
+              "value": 2
+            }, {
+              "name": "Research Design",
+              "value": 4
+            },{
+              "name": "Machine Learning",
+              "value": 6
+            },{
+              "name": "R",
+              "value": 2
+            },{
+              "name": "Python",
+              "value": 2
+            },{
+              "name": "Hadoop",
+              "value": 2
+            },{
+              "name": "SQL",
+              "value": 2
+            },{
+              "name": "Spark",
+              "value": 2
+            }]
+          },
+          {
           "name": "Coding",
           "children": [{
               "name": "Linux",
@@ -50,42 +79,23 @@ var width = 600,
             "children": [{
               "name": "Photoshop",
               "value": 15
+            },
+            {
+              "name": "Illustrator",
+              "value": 15
             }]
           },{
             "name": "Art",
             "children": [{
               "name": "Painting",
               "value": 10
-            }]
-          }, {
-            "name": "Data Science",
-            "children": [{
-              "name": "Statistics",
-              "value": 2
-            }, {
-              "name": "Research Design",
-              "value": 4
-            },{
-              "name": "Machine Learning",
-              "value": 6
-            },{
-              "name": "R",
-              "value": 2
-            },{
-              "name": "Python",
-              "value": 2
-            },{
-              "name": "Hadoop",
-              "value": 2
-            },{
-              "name": "SQL",
-              "value": 2
-            },{
-              "name": "Spark",
-              "value": 2
+            },
+            {
+              "name": "Drawing",
+              "value": 10
             }]
           }]
-              }       
+      }       
 
       var flattree = [];
       var sizes = [];
@@ -223,7 +233,7 @@ var width = 600,
           });
         };
       }
-      //***************************************************************
+      /***************************************************************
       var legend_data = tree.children.filter(function(d,i){  
         return d.children;
       });
@@ -249,4 +259,54 @@ var width = 600,
               .attr("dy", "0.40em")
               .text(function(d,i){return d.name;})
               .attr("class","skills-legend")  
+      //***************************************************************/ 
+
+      //***************************************************************
+      // technical skills
+      var skills_data = tree.children.filter(function(d,i){  
+        return d.children;
+      });
+
+
+      // var skills_list = svg.append("g")
+      //         .attr("class", "skills_list")
+      //         .selectAll("g")
+      //         .data(skills_data)
+      //           .enter().append("g")
+      //           .attr("class","skill_category")
+                
+      //     skills_list.append("text")
+      //           .attr("x", function(d,i){ return 420;})
+      //           .attr("dy", function(d,i){ return i*10;})
+      //           .attr("fill","#ffffff")
+      //           .text(function(d,i){return d.name;})
+
+      //     skills_list.selectAll("skill_category")
+      //           .data(function(d){return d.children;})
+      //           .enter().append("text")
+      //           .attr("x", function(d,i){ return 440;})
+      //           .attr("dy", function(d,i){ return i*10;})
+      //           .attr("fill","#ffffff")
+      //           .text(function(d){return d.name})
+                
+
+
+
+
+  d3.select("#bubbles").selectAll("ul")
+    .data(skills_data)
+    .enter().append("ul")
+    .attr("class","skills_category")
+    .text(function(d) { return d.name })
+
+    .selectAll("li")
+      .data(function(d) { return d.children; })
+      .enter().append("li")
+      .text(function(d) { return d.name })
+
+
+
+
+
+
       //***************************************************************/ 
