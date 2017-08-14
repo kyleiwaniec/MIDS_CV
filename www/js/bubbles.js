@@ -3,9 +3,9 @@ var width = 300,
     padding = 1.5, // separation between same-color nodes
     clusterPadding = 6, // separation between different-color nodes
     maxRadius = 12,
-    pallete = "#E8DDCB,#CDB380,#036564,#033649,#031634".split(",") 
+    pallete = "#033649,purple,#CDB380,#036564,#031634".split(",") 
     color = d3.scale.ordinal()
-      .domain(["Computer Science", 
+      .domain(["Coding", 
               "Data Science", 
               "Art",
               "Graphic Design",
@@ -78,11 +78,11 @@ var width = 300,
             "name": "Graphic Design",
             "children": [{
               "name": "Photoshop",
-              "value": 15
+              "value": 12
             },
             {
               "name": "Illustrator",
-              "value": 15
+              "value": 11
             }]
           },{
             "name": "Art",

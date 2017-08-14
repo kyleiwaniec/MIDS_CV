@@ -32,6 +32,7 @@ hr.inverse{
 .clr-data:before{
     background-color: #ddfd02;
     background-color: #031634;
+    background-color: purple;
 }
 .clr-code:before{
     background-color: #0188ba;
@@ -200,4 +201,8 @@ svg{
     font-weight: 100;
 }
 
-
+.logo{
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
