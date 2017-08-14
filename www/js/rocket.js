@@ -44,7 +44,7 @@ var cvData = {
         {
             'year':2001,
             'title':'Principal',
-            'company':'Hamilton Thomas Design, LLC'
+            'company':'Hamilton Thomas Design'
         },
         {
             'year':2004,
@@ -64,7 +64,7 @@ var cvData = {
         {
             'year':2013,
             'title':'Software Engineer',
-            'company':'SnapOne, INC'
+            'company':'SnapOne'
         },
         {
             'year':2015,
