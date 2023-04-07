@@ -92,8 +92,9 @@ hr.inverse{
     }
 
 .nameplate .byline2{
-    margin-top:-20px;
+    margin-top:-14px;
     margin-left:5px;
+    line-height: 18px;
 }
 ul.legend{
     list-style: none;
