@@ -91,9 +91,13 @@ hr.inverse{
         font-size: 24px;
     }
 
+.nameplate .byline2{
+    margin-top:-20px;
+    margin-left:5px;
+}
 ul.legend{
     list-style: none;
-    margin: 45px 5px;
+    margin: 30px 5px;
     padding:0;
 }    
 
