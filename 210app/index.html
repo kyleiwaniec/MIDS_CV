@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intesive Captone Unit - Predicting ICU Re-admissions</title>
+  <meta name="description" content="Intensive Capstone Unit webapp">
+  <meta name="author" description="Intensive Capstone Unit webapp">
+
+  <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+ "HTML-CSS": {availableFonts: ["TeX"]},
+ tex2jax: {inlineMath: [["$", "$"], ["\\(", "\\)"]]}
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oxygen:400,300,700">
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-spy="scroll" data-target="#navbar" data-offset="100">
+<div id="top"></div>
+<header>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#top"><img src="images/logo.png" class="pull-left" />Intensive Capstone Unit</a>
+      </div>
+      <div id="navbar" role="tablist" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li><a href="#introduction">Introduction</a></li>
+          <li><a href="#methodology">Methods</a></li>
+          <li><a href="#conclusion">Conclusions</a></li>
+          <li><a href="demo.html">Demo</a></li>
+          <li><a href="#team">Team</a></li>
+        </ul>
+      </div><!--/.navbar-collapse -->
+    </div>
+  </nav>
+</header>
+
+<section id="masthead" class="splash-img">
+  <div class="container">
+    <h1 class="icu-heading">ICU Readmissions </h1>
+    <h2 class="icu-subheading">Discriminative predictions using MIMIC III </h2>
+    <p class="text-center">
+      <a href="demo.html" class="icu-btn text-center">DEMO
+        <!-- <i class="material-icons">arrow_downward</i> -->
+      </a>
+    </p>
+  </div>
+</section>
+<section id="introduction">
+  <div class="container">
+    <h2 class="">Background</h2>
+    <p class="content__teaser">
+      <strong>Abstract</strong>
+    </p>
+    <p class="content__teaser">
+      In 2010 Center for Medicare Services (CMS) launched an initiative to reduce readmissions to hospitals by enforcing reduction of reimbursement for Medicare patients going to hospitals.
+    </p>
+    <p class="content__teaser">
+      Hospitals are under pressure to reduce readmissions for patients and improve patient care. Being able to reliably predict and alert medical professionals could help guide medical decision making to improve outcomes. A predictive model for readmission is presented using retrospective data using the MIMIC III dataset (Beth Israel Deaconess Medical Center) with the intent of being used at point of admission and discharge for patients admitted to the ICU. A diagnostic model on-par can be made without domain expertise and specific feature engineering.
+    </p>
+    <p class="content__teaser">
+      <strong>Summary:</strong> We present a predictive model for ICU readmission rates that are several highly selective (0.7-1.0) models with AUC of .76-.79 allowing for discrimative care but which are not diagnostic.
+    </p>
+    <p>
+      <strong>Introduction:</strong><br>
+      The Affordable Care Act (ACA) has put hospitals under pressure to reduce readmissions of patients, since Centers for Medicare and Medicaid Services (CMS) announced their Hospital Readmissions Reduction Program (HRRP). The HRRP is an anti-incentivized program where there is up to a 3% financial penalty for hospitals from Medicare. HRRP went into effect in 2012 and only applies to admissions concerning acute myocardial infarction (AMI), heart failure (HF), and pneumonia (PN)[<a target="_blank" href="https://www.cms.gov/medicare/medicare-fee-for-service-payment/acuteinpatientpps/readmissions-reduction-program.html">1</a>].
+    </p><br><p>
+      With the ever increasing expansion of the HRRP program, hospitals are pressured to understand the underlying causes of readmission and make interventions early. Many hospitals have opted for a high touch solution involving social workers, case managers, paramedics, home nursing, and more. These resources need to be allocated intelligently otherwise the hospital's efforts could be wasted. Additionaally, there is a pivotal point in the patient care cycle at discharge. By informing providers at the point of discharge the likeliehood of readmission for a patient based on the level of care we can allow the provider to use his medical decision making to ensure the best patient care experience. By predicting likelihoods of readmission and providing that information to a provider along with several useful metrics for evaluation of patients, we can take first steps towards improving medical decision making and resource allocation to reduce readmission rates and improve the patient care experience.
+    </p>
+
+
+  </div>
+</section>
+
+<section id="methodology" class="pbot40">
+  <div class="container">
+    <h2 class="">Methods</h2>
+
+   
+    <p>
+      This project was completed using the MIMIC-III dataset available from MIT, including hospital admissions data from the ICU between 2002 and 2012 at Beth Israel Deaconess Medical Center (BIDMC). BIDMC is a 651 bed hospital with five different ICU units covering surgery, trauma, cardiac, neonatal, and general medicine. BIDMC is serviced by a level 1 trauma center with roof-top helicopter access. Approximately 54% of patients admitted to the ICU at BIDMC come through the emergency department or transfers from other hospitals, while the remaining are direct admits from physicians. It is important to note that long term care facilities likely bring patients into the emergency department who are subsequently admitted.
+     
+    </p>
+  </div>
+</section>
+
+
+
+<section id="eda">
+  <div class="container">
+    <div class="text-center pbot40">
+      <img src="images/stats.png" alt=""/>
+      <img src="images/age-los-histograms.png" alt=""/>
+      <h3>Readmission distribution by age and length of stay</h3>
+    </div>
+    <!-- discharges -->
+
+    <div class="text-center">
+     
+      <div class="discharge-wrapper">
+        <div id="admitted_from" class="discharge-graph">
+          <ul>
+          </ul>
+        </div>
+        <p class="mtop70 text-center">Admitted From</p>
+      </div>
+      <div class="discharge-wrapper">
+        <div id="discharged_to" class="discharge-graph">
+          <ul>
+          </ul>
+        </div>
+        <p class="mtop70 text-center">Discharged To</p>
+      </div>
+       <h3>Distribution of admissions by location</h3>
+    </div>
+
+  </div>
+</section>
+<section id="model">
+  <div class="container">
+  <h2 class="">Model & Pipeline</h2>
+    <div class="container">
+    <img src="images/modeling-diagram.png" alt=""/>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="conclusion" class="">
+  <div class="container">
+    <h2 class="">Results & Conclusions</h2>
+    <p class="text-center"><img src="images/ROC-curves-vert.png" alt="ROC Curves"/></p>
+    <p>
+      A model was created without domain-specific feature engineering knowledge that is accepted by providers and is on-par with current research into prediction of hospital readmission by changing the focus from provider explainability of the model to model performance and metrics. This model is possible to implement at hospitals with most the work being focused on bringing data sources together efficiently. We hope to expand this work by partnering with hospitals on a specific EMR platform to expand the capabilities of the proof of concept model to a viable product. The model was built in such a way that it could be deployed to any system and have a pipeline create the initial model based on those systems for evaluation.
+
+    </p><br>
+    <p>
+      The initial ingestion results in a sizable feature space, with approximately 6,000 features. A L1 regularized logistic regression model was used to reduce the data into a smaller, more pertinent feature space. The pipeline supports a list of common algorithms&mdash;some with automated hyper parameter tuning&mdash;that yield reasonable results (AUC > 0.65): Logistic Regression, Random Forest, Extra Tree Classifier, Gradient Boosting and XGBoost. In practice, the models using the reduced dataset have approximately the same performance as the ones using the full dataset by reducing the sparsity of the model. These models were used to create an ensemble classifier, which does not improve the overall performance and hence was discarded to avoid overfitting due to increasing parameter space. The top performing models exhibit high specificity and have recall scores between 0.15 and 0.3. This shows that the models are conservative, and only predict a readmission when confidence is high &ndash; in line with the preferences of the medical providers surveyed.
+    </p><br>
+    <p>
+      The tree based models preformed significantly better (AUC > 0.78) than regression models which in turn outperformed Naïve Bayes. We attribute this to non-linearities being captured in the model since logistic regression and Naïve Bayes are both linear models in our implementation. This comes from the fact that the coefficients of the models are both linear while tree based models have branching and can capture different information. If the coefficients of a model are linear in the feature space then they cut the space into various lines thus the name. While if the coefficients are not linear it'll cut the space up into a different shape. We assume that healthcare and the health of a patient are effected by many non-linear processes making a linear model preform worse than a non-linear one. 
+      <!-- 
+      $$Naive  \ Bayes$$
+      $$\frac{1}{1+e^{-\beta\cdot x}} \rightarrow \beta\cdot x=\sum_{i}\beta_{i}x_{i} \rightarrow \textrm{Coefficients are linear in the space}$$
+   
+      $$Logistic  \ Regression$$
+      $$\log\left(\frac{p(y=1\vert x}{p(y=0\vert x)}\right) \rightarrow \log\left(y=1\vert x)\right) \rightarrow \left(\log\left(p(y=1)\right)+\log\left(\beta_{1}\right)\right)x^{T} -\left(\log\left(p(y=0)\right)+\log\left(\beta_{0}\right)x^{T}\right) \rightarrow \textrm{Coefficients are linear in the space}$$
+       -->
+    </p>
+    <img src="images/linearly-separable.png" />
+    </p>
+    
+    <div class="content__teaser quotes">
+      <p>
+      "Well you can't capture every patient, but the low false-positive <strong>makes me have confidence in the model</strong> even though I don't understand it."
+        <span class="pull-right">- Regional Medical Director</span>
+      </p>
+      <p>
+      "By finding missed charges <strong>we can change our process</strong> to ensure charge capture happens effectively. I can tell this hospital does 'bill on order' instead of 'bill on results'. There needs to be a process change because this is not the only order that was missed." 
+        <span class="pull-right">- VP of Operations</span>
+      </p>
+      <p>
+      "Empowering the providers is very important for a product we'd deploy in our system." 
+        <span class="pull-right">- Hospital IT Director</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="Acknowledgments">
+  <div class="container">
+    <h2 class="">Acknowledgments</h2>
+      <p>
+        We thank Dr. Alex Rudin, Dr. Jason James, Dr. Jason Begue, Winfield Winegar PA, Aaron Kidd PA, and Dr. Tony Briningstool for providing useful feedback on provider and hospital processes either in the ICU or in general. 
+      </p>
+  </div>
+</section>
+
+<section id="References">
+  <div class="container">
+    <h2 class="">References</h2>
+      <ol>
+        <li>Aiming for Fewer Hospital U-turns: The Medicare Hospital Readmission Reduction Program (<a href='http://kff.org/medicare/issue-brief/aiming-for-fewer-hospital-u-turns-the-medicare-hospital-readmission-reduction-program/'>link</a>) </li>
+        <li>Derivation and validation of an index to predict early death or unplanned readmission after discharge from hospital to the community. (<a href='https://www.ncbi.nlm.nih.gov/pubmed/20194559'>link</a>)</li>
+        <li>LACE+ index: extension of a validated index to predict early death or urgent readmission after hospital discharge using administrative data (<a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3659212/'>link</a>)</li>
+        <li>Development and Implementation of a Real-Time 30-Day Readmission Predictive Model (<a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4419988/'>link</a>)</li>
+      </ol>
+  </div>
+</section>
+
+
+<section id="team">
+  <div class="container">
+    <h2 class="">Team - UC Berkeley MIDS Capstone Project</h2>
+    <div class="container">
+      <div class="col-5 member">
+        <div class="member-photo"><img src="images/blank-avatar3.png"/></div>
+        <div class="member-info">
+          <h3>Sahab Aslam</h3>
+          <p>Data Scientist, some startup</p>
+        </div>
+      </div>
+       <div class="col-5 member">
+        <div class="member-photo"><img src="images/photo-jim.png"/></div>
+        <div class="member-info">
+          <h3>Jim Chen</h3>
+          <p>Project Manager/Analyst, FedEx</p>
+        </div>
+      </div>
+      <div class="col-5 member">
+        <div class="member-photo"><img src="images/photo-kyle.jpg"/></div>
+        <div class="member-info">
+          <h3>Kyle Hamilton</h3>
+          <!-- <p>Chief Innovation and Data Officer, iQ4</p> -->
+          <p>Chief Innovation and Data Officer, iQ4</p>
+        </div>
+      </div>
+
+      <div class="col-5 member">
+        <div class="member-photo"><img src="images/photo-tuhin.jpg"/></div>
+        <div class="member-info">
+          <h3>Tuhin Mahmud</h3>
+          <p>Software Engineer, IBM</p>
+        </div>
+      </div>
+      <div class="col-5 member">
+        <div class="member-photo"><img src="images/photo-james.png"/></div>
+        <div class="member-info">
+          <h3>James York-Winegar</h3>
+          <P>Director of IT, American Physician Partners</P>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="col-sm-12 mtop20">
+      <p>&copy; 2017 | <a href="https://github.com/jameswinegar/w210-capstone-ICU/">Code Repository</a></p>
+    </div>
+    
+  </div>
+</footer>
+
+
+<script src="scripts/jquery-3.2.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="scripts/discharge.js"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>

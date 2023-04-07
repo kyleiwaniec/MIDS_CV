@@ -1,0 +1,43 @@
+Total counts:
+----------------------------------------------------------------------------
+diseases of the circulatory systems	140257
+External Causes	97249
+endocrine, nutritional and metabolic diseases, and immunity disorders	69592
+diseases of the respiratory system	44825
+injury and poisoning	42948
+diseases of the digestive system	38527
+diseases of the genitourinary systems	32867
+symptoms, signs, and ill-defined conditions	29691
+diseases of the blood and blood-forming organs	25262
+mental disorders	24876
+infectious and parasitic diseases	20264
+certain conditions originating in the perinatal period	20160
+diseases of the nervous system	18909
+neoplasms	14235
+diseases of the musculoskeletal system and connective tissue	13392
+diseases of the skin and subcutaneous tissue	8789
+diseases of the sense organs	4425
+congenital anomalies	4078
+complications of pregnancy, childbirth, and the puerperium	654
+
+Primary - seq_num = 1:
+----------------------------------------------------------------------------
+diseases of the circulatory systems	18312
+injury and poisoning	8399
+External Causes	7970
+diseases of the digestive system	5222
+diseases of the respiratory system	4724
+infectious and parasitic diseases	4210
+neoplasms	3797
+endocrine, nutritional and metabolic diseases, and immunity disorders	1457
+diseases of the genitourinary system	1062
+diseases of the nervous system	812
+diseases of the musculoskeletal system and connective tissue	694
+symptoms, signs, and ill-defined conditions	598
+mental disorders	502
+certain conditions originating in the perinatal period	301
+congenital anomalies	296
+diseases of the blood and blood-forming organs	226
+diseases of the skin and subcutaneous tissue	178
+complications of pregnancy, childbirth, and the puerperium	152
+diseases of the sense organs	17

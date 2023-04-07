@@ -1,0 +1,22 @@
+TODO:
+
+# heart attack - drugs: show stepped graphs
+# Pressure_drugs_nitro_98959_298632.json
+
+#stroke - Neurochecks: how to display?
+#Neurochecks_92137_238410.json
+
+#lupus - Neurochecks: how to display?
+#Neurochecks_109_217934.json
+
+# inputs/outputs
+
+model predictors
+- need predictors for each patient. sparse!
+
+# x-axis: make duration of stay
+# x-axis - display ticks every hours
+
+display days on y axis
+
+running sum for fluids

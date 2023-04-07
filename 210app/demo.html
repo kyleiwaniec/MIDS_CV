@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intesive Captone Unit - Predicting ICU Re-admissions</title>
+  <meta name="description" content="Intensive Capstone Unit webapp">
+  <meta name="author" description="Intensive Capstone Unit webapp">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oxygen:400,300,700">
+  <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">  
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/slider.css">
+    <script>
+      if(window.location.host.indexOf('127.0.0.1') !== -1){
+        ENV = "http://127.0.0.1:8887/"
+      }else if(window.location.host.indexOf('berkeley.edu') !== -1){
+        ENV = "http://groups.ischool.berkeley.edu/intensive_capstone_unit/"
+      }else{
+        ENV = "http://www.candpgeneration.com/210app/"
+      }
+  </script>
+
+</head>
+<body data-spy="scroll" data-target="#navbar" data-offset="100" class="demo">
+<div id="top"></div>
+<header>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html#top"><img src="images/logo.png" class="pull-left" />Intensive Capstone Unit</a>
+      </div>
+      <div id="navbar" role="tablist" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select patient type <span class="caret"></span></a>
+            <ul class="dropdown-menu" id="patients">
+              <li><a href="96686_226409">Diabetes</a></li>
+              <li><a href="98959_298632">Heart Attack</a></li>
+              <li><a href="99383_236117">Septic Shock</a></li>
+              <li><a href="109_217934">Lupus</a></li>
+              <li><a href="92137_238410">Stroke</a></li>
+<!--               <li><a href="106_221610">Opiate OD</a></li>
+ -->            </ul>
+          </li>
+        </ul>
+      </div><!--/.navbar-collapse -->
+    </div>
+  </nav>
+</header>
+
+<section id="chart" class="mtop50 mbot0">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-3">
+        
+        <h3 class="readmission_prob mtop20">Probability of readmission</h3>
+        <div class="donut mbot20" id="HOME"></div>
+      </div>
+
+      <div class="col-sm-9 description">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs mtop20" role="tablist">
+            <li><h3 id="name">Jane Doe</h3></li>
+            <li role="presentation" class="active pull-right"><a href="#discharge_notes" aria-controls="discharge_notes" role="tab" data-toggle="tab">Discharge notes</a></li>
+            <li role="presentation" class="pull-right"><a href="#admission_notes" aria-controls="admission_notes" role="tab" data-toggle="tab">Admission notes</a></li>
+          </ul>
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane" id="admission_notes">admission</div>
+            <div role="tabpanel" class="tab-pane active" id="discharge_notes">discharge</div>
+          </div>
+          <button class="showhide btn btn-default">show more</button>
+      </div>
+
+
+    </div>
+    <div class="row">
+      <hr class="hide-sm">
+      <div class="col-sm-3">
+        
+        <h3 class="mtop0">Patient Indicators</h3>
+        <ul class="reset feature-list" id="patient_stats"></ul>
+
+      </div>
+
+      <div class="col-sm-9">
+        <h3 class="mtop-7 measures">Vital Measures <span class="vhr"></span> ICU Model predictors</h3>
+
+        <div class="thumb-strip">
+          <div class="slider-arr-prev list-hide"><i class="slider-arr-prev-icon"></i></div>
+          <div class="slider clearfix"></div><!-- slider -->
+            <div class="slider-arr-next list-hide"><i class="slider-arr-next-icon"></i></div>
+          </div>
+
+        <div id="plotly"></div>
+
+
+      </div>
+<!--       <div class="col-sm-2">
+        
+      </div> -->
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="col-sm-12 mtop20">
+      <p>&copy; 2017 | <a href="https://github.com/jameswinegar/w210-capstone-ICU/">Code Repository</a></p>
+    </div>
+    
+  </div>
+</footer>
+
+
+<script src="scripts/jquery-3.2.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="scripts/patients.js"></script>
+<script src="scripts/makePlot.js"></script>
+<script src="scripts/demo.js"></script>
+<script src="scripts/donut.js"></script>
+<script src="scripts/snapslider.js"></script>
+
+</body>
+</html>

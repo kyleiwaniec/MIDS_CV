@@ -1,0 +1,124 @@
+@media screen and (max-width: 992px) {
+   .icu-btn{
+    display: none;
+   }
+}
+
+@media(max-width:767px){
+  .splash-img{
+      width: 100%;
+      height:250px;
+      background: url(../images/icu-707-light.png) #86b2b5;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      /*border-bottom: 5px solid #ff5252;*/
+    }
+    .icu-heading {
+        font-size: 44px;
+    }
+    .icu-subheading {
+      font-size: 34px;
+    }
+    .icu-btn{display:none;}
+
+    .col-5 {
+        width: 100%;
+        padding: 2.5%;
+        float: none; 
+        text-align: center;
+        margin: 0 auto;
+    }
+    .
+
+
+}
+@media(max-width:600px){
+    .nav-tabs>li {
+      float: none;
+      margin-top: 10px;
+    }
+    .measures, .readmission_prob{
+      text-align: left;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #6CC;
+    }
+    hr.hide-sm{
+      display:none;
+    }
+}
+
+@media(max-width:420px){
+   
+}
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+ 
+
+}
+
+/*tablet css*/
+@media(min-width:768px) and (max-width:992px){
+  .container {
+      width: auto;
+  }
+}
+@media(min-width:992px) and (max-width:1128px){
+   .container {
+      width: auto;
+  }
+}
+@media(min-width:992px) and (max-width:1250px){
+   .container {
+      width: auto;
+  }
+   
+}
+/*Desktop css*/
+
+@media(min-width:768px){
+    .splash-img{
+      width: 100%;
+      height:430px;
+      background: url(../images/icu-707-light.png) #86b2b5;
+      background-size: 100%;
+      background-repeat: no-repeat;
+
+      /*border-bottom: 5px solid #ff5252;*/
+    }
+    .icu-heading {
+        font-size: 64px;
+    }
+    .icu-subheading {
+      font-size: 54px;
+    }
+}
+
+@media(min-width:1075px){
+    .splash-img{
+      width: 100%;
+      height:600px;
+      background: url(../images/icu-707-light.png) #86b2b5;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      /*border-bottom: 5px solid #ff5252;*/
+    }
+}
+@media(min-width:1400px){
+    .splash-img{
+      width: 100%;
+      height:800px;
+      background: url(../images/icu-707-light.png) #86b2b5;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      /*border-bottom: 5px solid #ff5252;*/
+    }
+    .icu-heading {
+        font-size: 80px;
+    }
+}
+
+
