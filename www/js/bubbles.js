@@ -19,19 +19,19 @@ var width = 300,
         {
             "name": "Data Science",
             "children": [{
+              "name": "Machine Learning",
+              "value": 6
+            },{
               "name": "Statistics",
               "value": 2
             }, {
               "name": "Research Design",
               "value": 4
             },{
-              "name": "Machine Learning",
-              "value": 6
-            },{
               "name": "R",
               "value": 2
             },{
-              "name": "Python",
+              "name": "Python/Pytorch",
               "value": 2
             },{
               "name": "Hadoop",
