@@ -1,0 +1,31 @@
+top features: 
+1 sheath line tip cultured
+2 lacrimation
+3 vapotherm fio2
+4 calprevflg
+5 nicardipine gtt
+6 pa catheter line tip cultured
+7 cist mcg/kg/min.
+8 impaired skin odor #7
+9 impaired skin depth #5
+10 pupils
+11 sweating
+12 pressure ulcer stage #8
+13 trauma line tip cultured
+14 csf pressure
+15 poikilocytosis
+16 pressure ulcer stage #10
+17 nasal congestion
+18 gender
+19 driving press.
+20 tunneled (hickman) line tip cultured
+21 restraints ordered
+22 mgso4
+23 heparin_x
+24 ric placed in outside facility
+25 triple introducer zero/calibrate
+26 creatinine, serum
+27 alarms on
+28 helioox nrb flow
+29 rbc casts
+30 isoproterenol

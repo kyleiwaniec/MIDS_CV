@@ -1,0 +1,29 @@
+{217934: 
+{'home': array([[ 0.68953776,  0.31046227]], dtype=float32),
+  'hospital': array([[ 0.68953776,  0.31046227]], dtype=float32),
+  'longterm': array([[ 0.68953776,  0.31046227]], dtype=float32),
+  'others': array([[ 0.68953776,  0.31046227]], dtype=float32)},
+
+ 226409: 
+ {'home': array([[ 0.89793843,  0.10206157]], dtype=float32),
+  'hospital': array([[ 0.89793843,  0.10206157]], dtype=float32),
+  'longterm': array([[ 0.89793843,  0.10206157]], dtype=float32),
+  'others': array([[ 0.89793843,  0.10206157]], dtype=float32)},
+
+ 236117: 
+ {'home': array([[ 0.78109103,  0.21890898]], dtype=float32),
+  'hospital': array([[ 0.78109103,  0.21890898]], dtype=float32),
+  'longterm': array([[ 0.78109103,  0.21890898]], dtype=float32),
+  'others': array([[ 0.78109103,  0.21890898]], dtype=float32)},
+
+ 238410: 
+ {'home': array([[ 0.92475569,  0.07524428]], dtype=float32),
+  'hospital': array([[ 0.92475569,  0.07524428]], dtype=float32),
+  'longterm': array([[ 0.92475569,  0.07524428]], dtype=float32),
+  'others': array([[ 0.92475569,  0.07524428]], dtype=float32)},
+
+ 298632: 
+ {'home': array([[ 0.94873542,  0.05126461]], dtype=float32),
+  'hospital': array([[ 0.94873542,  0.05126461]], dtype=float32),
+  'longterm': array([[ 0.94873542,  0.05126461]], dtype=float32),
+  'others': array([[ 0.94873542,  0.05126461]], dtype=float32)}}
